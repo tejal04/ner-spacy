@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NER Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>  
+</head>
+<body>
+    <h1>Name Entity Recognition (NER) Results</h1>
+    <div class="input-text">
+        <h4>Input Text:</h4>
+        <p>{{ text }}</p>
+    </div>
+
+    {% if entities|length == 0 %}
+        <p class="no-entities">No entities found!</p>
+    {% else %}
+        <div class="center">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Entity</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity[0] }}</td>
+                        <td>{{ entity[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+    
+    <div class="back-button">
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>

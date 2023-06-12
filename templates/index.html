@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Entity Recoignition</title>
+
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Name Entity Recognition (NER) App</h1>
+    <div class="center">
+        <form action="/ner" method="post">
+            <textarea name="text" rows="20" cols="70" placeholder="Enter Text Here"></textarea><br>
+            <input class="submit" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
